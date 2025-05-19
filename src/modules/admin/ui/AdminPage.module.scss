@@ -1,0 +1,65 @@
+.adminPage {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+
+  .title {
+    color: #00c2a8;
+    font-size: 38px;
+    text-align: center;
+  }
+
+  .description {
+    color: #e0e0e0;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+  }
+
+  .btn {
+    border: none;
+    color: #e0e0e0;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: #ffa500;
+    border-radius: 12px;
+    width: 100%;
+    padding: 10px 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: #e59400;
+    }
+  }
+
+  .container {
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    .price {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+
+      .select {
+        padding: 10px 20px;
+        outline: none;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.1);
+        font-size: 16px;
+        font-weight: 500;
+        color: white;
+        border: none;
+        margin-top: auto;
+        appearance: none;
+        cursor: pointer;
+
+        option {
+          background: rgba(0, 0, 0, 0.8); // лучше темный фон
+          font-size: 16px;
+          color: white;
+        }
+      }
+    }
+  }
+}

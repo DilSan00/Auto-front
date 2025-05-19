@@ -1,0 +1,55 @@
+.form {
+  max-width: 500px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  padding: 40px 60px;
+
+  .title {
+    font-size: 38px;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .notAccoutText {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+
+    .link {
+      font-size: 20px;
+      color: #ffa500;
+      text-decoration: underline;
+      cursor: pointer;
+      margin-left: 4px;
+    }
+  }
+
+  .inputs {
+    margin-top: 12px;
+    margin-bottom: 28px;
+    display: grid;
+    gap: 10px;
+  }
+
+  .btn {
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #e59400;
+    }
+  }
+}

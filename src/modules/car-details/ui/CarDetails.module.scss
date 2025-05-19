@@ -1,0 +1,85 @@
+.carDetails {
+  padding: 40px 20px;
+  background-color: #313131;
+  color: #fff;
+}
+
+.container {
+  max-width: 1050px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.image {
+  flex: 1 1 400px;
+  max-width: 500px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.info {
+  flex: 1 1 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .owner {
+    display: flex;
+    justify-content: space-between;
+    background-color: #222;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 16px;
+
+    p {
+      display: grid;
+      gap: 6px;
+    }
+
+    .callButton {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .callButton:hover {
+      background-color: #45a049;
+    }
+
+    .callButton svg {
+      margin-right: 8px;
+    }
+  }
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.price {
+  color: orange;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.specs {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+
+  li {
+    margin-bottom: 8px;
+  }
+}
+
+

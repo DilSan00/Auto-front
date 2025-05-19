@@ -1,0 +1,82 @@
+.card {
+  max-width: 328px;
+  width: 100%;
+  background-color: #1f1f1f;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(255, 165, 0, 0.15);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+  color: white;
+  display: flex;
+  flex-direction: column;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(255, 165, 0, 0.25);
+  }
+}
+
+.image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.content {
+  padding: 16px;
+
+  .title {
+    font-size: 20px;
+    margin-bottom: 8px;
+  }
+
+  .price {
+    color: #ff9900;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 14px;
+    color: #ccc;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+  }
+
+  .location {
+    font-size: 14px;
+    color: #888;
+  }
+
+  .owner {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .callButton {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+    }
+
+    .callButton:hover {
+      background-color: #45a049;
+    }
+
+    .callButton svg {
+      margin-right: 8px;
+    }
+  }
+}

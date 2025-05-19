@@ -1,0 +1,49 @@
+.about {
+  padding: 0 50px;
+  display: grid;
+
+  .title {
+    color: #00c2a8;
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+
+  .subtitle {
+    color: #ffa500;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+
+  .mission {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  .services,
+  .values {
+    list-style-type: none;
+    padding: 0;
+    font-size: 1.1rem;
+  }
+
+  .services li,
+  .values li {
+    margin: 10px 0;
+  }
+
+  .contactDetails {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+}
