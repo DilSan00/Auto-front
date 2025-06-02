@@ -6,6 +6,34 @@ import { useValidation } from "../../../shared/hooks/useValidation";
 import { LoaderFullScreen } from "../../../shared/ui/loader";
 import { Modal } from "../../../shared/ui/Modal/Modal";
 
+const gearboxSelect = ["Механика", "Автомат"];
+const citysSelect = [
+  "Бишкек",
+  "Чуй",
+  "Джалал-Абад",
+  "Талас",
+  "Нарын",
+  "Ысык-Кол",
+  "Ош",
+  "Баткен",
+];
+const driveTypeSelect = ["Передний привод", "Задний привод", "Полный привод"];
+const bodyTypeSelect = [
+  "Седан",
+  "Хэтчбек",
+  "Универсал",
+  "Кроссовер",
+  "Внедорожник",
+  "Купе",
+  "Кабриолет",
+  "Пикап",
+  "Минивэн",
+  "Фургон",
+  "Лифтбек",
+  "Родстер",
+  "Тарга",
+];
+
 export function AdminPage() {
   const [isOpen, setIsOpen] = useState(true);
   const [formData, setFormData] = useState({
@@ -85,7 +113,7 @@ export function AdminPage() {
     <div className={s.adminPage}>
       {isLoading && <LoaderFullScreen size={60} />}
 
-      {true && isOpen && (
+      {isSuccess && isOpen && (
         <Modal onClose={setIsOpen}>
           <div className={s.modalSuccess}>Машина успешно добавлено</div>
         </Modal>
@@ -135,26 +163,13 @@ export function AdminPage() {
           validate={errors.mileage}
         />
         <Input
-          name="location"
-          value={formData.location}
-          onChange={handleInputChange}
-          placeholder="Город"
-          validate={errors.location}
-        />
-        <Input
-          name="gearbox"
-          value={formData.gearbox}
-          onChange={handleInputChange}
-          placeholder="КПП (Автомат)"
-          validate={errors.gearbox}
-        />
-        <Input
           name="engine"
           value={formData.engine}
           onChange={handleInputChange}
           placeholder="Двигатель (2.4 бензин)"
           validate={errors.engine}
         />
+
         <div className={s.price}>
           <Input
             name="price"
@@ -183,20 +198,70 @@ export function AdminPage() {
           placeholder="Номер владельца (+996 707 123 456)"
           validate={errors.ownerPhone}
         />
-        <Input
-          name="driveType"
-          value={formData.driveType}
-          onChange={handleInputChange}
-          placeholder="Тип привода (Передний привод)"
-          validate={errors.driveType}
-        />
-        <Input
-          name="bodyType"
-          value={formData.bodyType}
-          onChange={handleInputChange}
-          placeholder="Тип кузова (Седан)"
-          validate={errors.bodyType}
-        />
+
+        <div className={s.inputWrapper}>
+          <select
+            className={s.select}
+            name="location"
+            value={formData.location}
+            onChange={handleInputChange}
+          >
+            <option disabled value="">
+              Выберите город
+            </option>
+            {citysSelect.map((city) => (
+              <option key={city} value={city}>
+                {city}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className={s.inputWrapper}>
+          <select
+            className={s.select}
+            name="gearbox"
+            value={formData.gearbox}
+            onChange={handleInputChange}
+          >
+            <option disabled value="">
+              Выберите КПП
+            </option>
+            {gearboxSelect.map((g) => (
+              <option key={g} value={g}>
+                {g}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className={s.inputWrapper}>
+          <select
+            className={s.select}
+            name="driveType"
+            value={formData.driveType}
+            onChange={handleInputChange}
+          >
+            {driveTypeSelect.map((driveType) => (
+              <option key={driveType} value={driveType}>
+                {driveType}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div className={s.inputWrapper}>
+          <select
+            className={s.select}
+            name="bodyType"
+            value={formData.bodyType}
+            onChange={handleInputChange}
+          >
+            {bodyTypeSelect.map((bodyType) => (
+              <option key={bodyType} value={bodyType}>
+                {bodyType}
+              </option>
+            ))}
+          </select>
+        </div>
+
         <button type="submit" className={s.btn}>
           Сохранить
         </button>
