@@ -3,8 +3,11 @@ import { Input } from "../../../shared/ui/Input/Input";
 import { useAddAutosMutation } from "../api";
 import { useState } from "react";
 import { useValidation } from "../../../shared/hooks/useValidation";
+import { LoaderFullScreen } from "../../../shared/ui/loader";
+import { Modal } from "../../../shared/ui/Modal/Modal";
 
 export function AdminPage() {
+  const [isOpen, setIsOpen] = useState(true);
   const [formData, setFormData] = useState({
     mark: "",
     model: "",
@@ -21,7 +24,7 @@ export function AdminPage() {
     bodyType: "",
   });
 
-  const [addAuto] = useAddAutosMutation();
+  const [addAuto, { isLoading, isSuccess }] = useAddAutosMutation();
   const { errors, setValidationErrors } = useValidation();
 
   const handleInputChange = (e) => {
@@ -80,6 +83,14 @@ export function AdminPage() {
 
   return (
     <div className={s.adminPage}>
+      {isLoading && <LoaderFullScreen size={60} />}
+
+      {true && isOpen && (
+        <Modal onClose={setIsOpen}>
+          <div className={s.modalSuccess}>Машина успешно добавлено</div>
+        </Modal>
+      )}
+
       <h1 className={s.title}>Добавить машину</h1>
       <p className={s.description}>Введите детали машины ниже:</p>
 
